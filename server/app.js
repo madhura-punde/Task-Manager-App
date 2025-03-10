@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 require("dotenv").config();
 
 const taskRoutes = require("./routes/taskRoutes");
@@ -8,6 +9,7 @@ const authRoutes = require("./routes/authRoute");
 
 const app = express();
 
+app.use(cors());
 app.use(bodyParser.json());
 
 // MongoDB connection
