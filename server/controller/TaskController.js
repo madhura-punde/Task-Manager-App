@@ -35,7 +35,6 @@ exports.getUserTasks = async (req, res) => {
   try {
     const userId = req.user;
     const user = await User.findById(userId);
-    // console.log({ user, userId });
 
     if (!user) {
       return res.status(404).json({ message: "User not found" });
@@ -47,13 +46,15 @@ exports.getUserTasks = async (req, res) => {
       users.forEach((u) => {
         allTasks = [...allTasks, ...u.tasks];
       });
-      return res.status(200).json(allTasks);
+      return res
+        .status(200)
+        .json({ taskList: allTasks, requestedBy: user.email });
     }
     // Send the tasks of the user
     if (user.tasks.length === 0) {
       res.status(200).json({ tasks: user.tasks, message: "No tasks found" });
     }
-    res.status(200).json(user.tasks);
+    res.status(200).json({ taskList: user.tasks, requestedBy: user.email });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
@@ -91,7 +92,7 @@ exports.updateTask = async (req, res) => {
     if (!task) {
       return res.status(404).json({ error: "Task not found" });
     }
-    // console.log(task);
+
     task.title = req.body.title || task.title;
     task.description = req.body.description || task.description;
     task.status = req.body.status || task.status;
@@ -111,7 +112,7 @@ exports.updateTask = async (req, res) => {
 exports.deleteTask = async (req, res) => {
   try {
     const user = await User.findById(req.user);
-    // console.log(user);
+
     if (!user) {
       return res.status(404).json({ error: "User not found" });
     }
@@ -121,7 +122,6 @@ exports.deleteTask = async (req, res) => {
     }
 
     let deletedtask = user.tasks.pull(req.params.id);
-    // console.log(deletedtask);
     await user.save();
 
     res
