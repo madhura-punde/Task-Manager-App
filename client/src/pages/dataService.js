@@ -2,7 +2,7 @@ import { getService } from "../components/apiService";
 
 const token = localStorage.getItem("authToken");
 
-const headers = token ? { "x-auth-token": token } : {};
+const headers = token ? { token } : {};
 
 export const getUserTasksServices = async () => {
   let res;

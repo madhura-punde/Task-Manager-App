@@ -1,4 +1,3 @@
-// src/pages/Login.jsx
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LoginService } from "./authService";
@@ -10,19 +9,19 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    console.log(email, password);
+
     try {
       const response = await LoginService({
         email,
         password,
       });
-      console.log(response);
-      // Check if the login was successful
       if (response.status === 200) {
-        console.log(response.data);
         localStorage.setItem("x-auth-token", response.data.token);
-        // alert(response.data.message);
-        navigate("/dashboard");
+        if (response.data.role === "Admin") {
+          navigate("/admin-dashboard");
+        } else {
+          navigate("/dashboard");
+        }
       }
     } catch (error) {
       if (error.response) {
