@@ -1,4 +1,3 @@
-// src/pages/SignIn.jsx
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { SignUpService } from "./authService";
@@ -17,14 +16,11 @@ const SignIn = () => {
         password,
       });
 
-      // Check if the signup was successful
       if (response.status === 200) {
-        console.log(response);
-        alert(response.data.message); // Show success message
-        navigate("/login"); // Redirect to login page
+        alert(response.data.message);
+        navigate("/login");
       }
     } catch (error) {
-      // Handle any errors
       if (error.response) {
         console.log(error);
         alert(error.response.data.message); // Show error message from backend

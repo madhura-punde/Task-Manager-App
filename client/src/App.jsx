@@ -5,6 +5,7 @@ import SignIn from "./pages/SignIn";
 import Login from "./pages/LogIn";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Dashboard from "./pages/Dashboard";
+import AdminDashboard from "./pages/AdminDashboard";
 
 function App() {
   return (
@@ -13,17 +14,17 @@ function App() {
         <Routes>
           <Route path="/signup" element={<SignIn />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/" element={<Login />} />
+          {/* <Route path="/" element={<Login />} /> */}
 
           <Route
             path="/dashboard"
             element={<ProtectedRoute element={Dashboard} role="User" />}
           />
 
-          {/* <Route
-            path="/dashboard"
-            element={<ProtectedRoute element={<Dashboard />} role="Admin" />}
-          /> */}
+          <Route
+            path="/admin-dashboard"
+            element={<ProtectedRoute element={AdminDashboard} role="Admin" />}
+          />
         </Routes>
       </div>
     </Router>
