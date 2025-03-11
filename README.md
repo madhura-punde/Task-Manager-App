@@ -16,3 +16,6 @@ MERN stack project
    • Mobile & Desktop compatibility.
 6. API Documentation
    • Provide a Postman Collection for easy testing.
+
+User Dashboard
+<img width="1373" alt="Screenshot 2025-03-11 at 2 06 39 PM" src="https://github.com/user-attachments/assets/d2989268-cdea-4041-87d8-27f6fc40b5cc" />
