@@ -2,14 +2,14 @@ const User = require("../models/User");
 
 exports.createTask = async (req, res) => {
   try {
-    const { title, description } = req.body;
+    const { title, description, status } = req.body;
 
     // Create the new task object
     const newTask = {
       title,
       description,
-      completed: false,
-      createdAt: new Date(),
+      completed: status === "Completed" ? true : false,
+      status,
     };
 
     const user = await User.findById(req.user);
@@ -25,7 +25,11 @@ exports.createTask = async (req, res) => {
 
     res
       .status(201)
-      .json({ message: "Task created successfully", task: newTask });
+      .json({
+        message: "Task created successfully",
+        task: newTask,
+        taskList: user.tasks,
+      });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
