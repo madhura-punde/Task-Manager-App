@@ -1,0 +1,120 @@
+/* Dashboard Container */
+.admin-dashboard-container {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a2e);
+  color: #ffffff;
+  margin: auto;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Inner Box */
+.dashboard-content {
+  width: 90%;
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+/* Title */
+.dashboard-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #ffcc70;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+/* Logout Button */
+.logout-button {
+  background: linear-gradient(135deg, #ff7eb3, #ff758c);
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255, 118, 148, 0.4);
+  display: block;
+  margin: 20px auto;
+}
+
+.logout-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 118, 148, 0.6);
+}
+
+/* User Greeting */
+.user-greeting {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #fbd786;
+}
+
+/* Task List */
+.task-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Individual Task Cards */
+.task-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+  border-left: 5px solid #ffcc70;
+}
+
+.task-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Task Title */
+.task-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffcc70;
+}
+
+/* Task Description */
+.task-description {
+  font-size: 16px;
+  color: #ddd;
+  margin: 5px 0;
+}
+
+/* Task Status */
+.task-status {
+  font-size: 14px;
+  font-weight: bold;
+  color: #ff9a9e;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard-content {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .dashboard-title {
+    font-size: 24px;
+  }
+}

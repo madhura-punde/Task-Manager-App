@@ -46,4 +46,7 @@ export const postService = (endPoint, data) => {
   return apiService.post(endPoint, data);
 };
 
+export const deleteService = (endPoint) => {
+  return apiService.delete(endPoint);
+};
 export default apiService;
