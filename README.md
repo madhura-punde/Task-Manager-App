@@ -17,5 +17,8 @@ MERN stack project
 6. API Documentation
    • Provide a Postman Collection for easy testing.
 
+
 User Dashboard
-<img width="1373" alt="Screenshot 2025-03-11 at 2 06 39 PM" src="https://github.com/user-attachments/assets/d2989268-cdea-4041-87d8-27f6fc40b5cc" />
+<img width="1317" alt="Screenshot 2025-03-11 at 4 05 00 PM" src="https://github.com/user-attachments/assets/7ccfa57b-7623-4fc4-bf13-d548e97f1db9" />
+<img width="1370" alt="Screenshot 2025-03-11 at 4 04 49 PM" src="https://github.com/user-attachments/assets/5e549673-d34a-4ba9-bc77-36f075131136" />
+<img width="1333" alt="Screenshot 2025-03-11 at 4 05 47 PM" src="https://github.com/user-attachments/assets/a727ad6f-8f8b-433f-bd6b-817809d61ea0" />
